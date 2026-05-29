@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --bordo:         #6f2a38;
     --bordo-dark:    #4e1e28;
@@ -23,107 +22,38 @@
     --text-mid:      #6b4a52;
     --text-light:    #a08088;
   }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Jost', sans-serif;
-    background: var(--off-white);
-    color: var(--text-dark);
-    font-weight: 300;
-    line-height: 1.7;
-    font-size: 16px;
-    overflow-x: hidden;
-  }
-
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5rem;
-    background: rgba(250,247,245,0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(176,138,90,0.15);
-  }
+  body { font-family: 'Jost', sans-serif; background: var(--off-white); color: var(--text-dark); font-weight: 300; line-height: 1.7; font-size: 16px; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5rem; background: rgba(250,247,245,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(176,138,90,0.15); }
   .nav-logo img { height: 52px; width: auto; display: block; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    text-decoration: none; color: var(--text-mid);
-    font-size: 0.78rem; letter-spacing: 0.12em;
-    text-transform: uppercase; font-weight: 400; transition: color 0.2s;
-  }
+  .nav-links a { text-decoration: none; color: var(--text-mid); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
   .nav-links a:hover { color: var(--bordo); }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
   .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--bordo); }
-
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-    padding-top: 76px;
-  }
-  .hero-text {
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 5rem 4rem 5rem 6rem;
-  }
-  .hero-eyebrow {
-    display: flex; align-items: center; gap: 0.8rem;
-    font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
-    color: var(--dourado); margin-bottom: 2rem; font-weight: 400;
-  }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; padding-top: 76px; }
+  .hero-text { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
+  .hero-eyebrow { display: flex; align-items: center; gap: 0.8rem; font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--dourado); margin-bottom: 2rem; font-weight: 400; }
   .hero-eyebrow::before { content: ''; display: inline-block; width: 36px; height: 1px; background: var(--dourado); }
-  .hero h1 {
-    font-family: 'Libre Baskerville', serif;
-    font-size: clamp(2.4rem, 4vw, 4.2rem);
-    font-weight: 400; line-height: 1.1;
-    color: var(--bordo-dark); margin-bottom: 1.6rem;
-  }
+  .hero h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2.4rem, 4vw, 4.2rem); font-weight: 400; line-height: 1.1; color: var(--bordo-dark); margin-bottom: 1.6rem; }
   .hero h1 em { font-style: italic; color: var(--bordo); }
   .hero-desc { color: var(--text-mid); font-size: 1rem; max-width: 420px; margin-bottom: 2.5rem; line-height: 1.85; }
-  .btn-primary {
-    display: inline-block; padding: 0.95rem 2.4rem;
-    background: var(--bordo); color: #fff; text-decoration: none;
-    font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
-    font-weight: 400; font-family: 'Jost', sans-serif; transition: background 0.25s, transform 0.2s;
-  }
+  .btn-primary { display: inline-block; padding: 0.95rem 2.4rem; background: var(--bordo); color: #fff; text-decoration: none; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 400; font-family: 'Jost', sans-serif; transition: background 0.25s, transform 0.2s; }
   .btn-primary:hover { background: var(--bordo-dark); transform: translateY(-1px); }
-  .btn-outline {
-    display: inline-block; padding: 0.95rem 2.4rem;
-    border: 1px solid var(--dourado); color: var(--dourado); text-decoration: none;
-    font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
-    font-weight: 400; font-family: 'Jost', sans-serif; margin-left: 1rem; transition: all 0.25s;
-  }
+  .btn-outline { display: inline-block; padding: 0.95rem 2.4rem; border: 1px solid var(--dourado); color: var(--dourado); text-decoration: none; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 400; font-family: 'Jost', sans-serif; margin-left: 1rem; transition: all 0.25s; }
   .btn-outline:hover { background: var(--dourado); color: #fff; }
   .crm-tag { display: block; margin-top: 1.4rem; font-size: 0.68rem; letter-spacing: 0.14em; color: var(--text-light); text-transform: uppercase; }
   .hero-image { position: relative; overflow: hidden; background: var(--nude-light); }
-  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
   .divider { height: 1px; background: linear-gradient(to right, transparent, var(--dourado), transparent); }
-
-  .sobre {
-    background: var(--warm-white);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-  }
-  .sobre-galeria {
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-    min-height: 620px;
-  }
+  .sobre { background: var(--warm-white); display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .sobre-galeria { display: grid; grid-template-rows: 2fr 1fr; grid-template-columns: 1fr 1fr; gap: 4px; min-height: 620px; }
   .sobre-foto-principal { grid-row: 1 / 2; grid-column: 1 / 3; overflow: hidden; }
-  .sobre-foto-principal img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .sobre-foto-principal img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
   .sobre-foto-sec { overflow: hidden; }
-  .sobre-foto-sec img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.4s; }
+  .sobre-foto-sec img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; transition: transform 0.4s; }
   .sobre-foto-sec:hover img { transform: scale(1.04); }
   .sobre-text { padding: 5rem 5rem 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
-
   .section-label { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dourado); margin-bottom: 0.8rem; font-weight: 400; }
   .section-title { font-family: 'Libre Baskerville', serif; font-size: clamp(1.9rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.2; color: var(--bordo-dark); margin-bottom: 1.5rem; }
   .section-title em { font-style: italic; color: var(--bordo); }
@@ -132,26 +62,19 @@
   .destaque-item { padding: 1.1rem 1.2rem; border-left: 2px solid var(--nude); background: var(--off-white); }
   .destaque-item h4 { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dourado); margin-bottom: 0.3rem; font-weight: 500; }
   .destaque-item p { font-size: 0.85rem; color: var(--text-mid); margin: 0; line-height: 1.5; }
-
   .areas { padding: 7rem 6rem; background: var(--off-white); }
   .areas-header { margin-bottom: 3.5rem; }
   .areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .area-card {
-    padding: 2.2rem 1.8rem; background: var(--warm-white);
-    border: 1px solid rgba(176,138,90,0.15); border-top: 2px solid var(--nude);
-    transition: border-top-color 0.25s, transform 0.25s, box-shadow 0.25s;
-  }
+  .area-card { padding: 2.2rem 1.8rem; background: var(--warm-white); border: 1px solid rgba(176,138,90,0.15); border-top: 2px solid var(--nude); transition: border-top-color 0.25s, transform 0.25s, box-shadow 0.25s; }
   .area-card:hover { border-top-color: var(--bordo); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(111,42,56,0.08); }
   .area-num { font-family: 'Libre Baskerville', serif; font-size: 2rem; color: var(--nude); font-weight: 400; line-height: 1; margin-bottom: 1rem; transition: color 0.25s; }
   .area-card:hover .area-num { color: var(--bordo); }
   .area-card h3 { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; font-weight: 400; color: var(--bordo-dark); margin-bottom: 0.7rem; }
   .area-card p { font-size: 0.87rem; color: var(--text-mid); line-height: 1.75; }
-
   .galeria-strip { display: grid; grid-template-columns: repeat(4, 1fr); height: 280px; gap: 4px; }
   .galeria-strip-item { overflow: hidden; position: relative; }
-  .galeria-strip-item img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.5s; }
+  .galeria-strip-item img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; transition: transform 0.5s; }
   .galeria-strip-item:hover img { transform: scale(1.06); }
-
   .formacao { background: var(--bordo-dark); padding: 7rem 6rem; }
   .formacao .section-label { color: var(--nude); }
   .formacao .section-title { color: var(--off-white); }
@@ -164,22 +87,16 @@
   .timeline-year { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dourado-light); margin-bottom: 0.3rem; }
   .timeline-title { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; color: var(--off-white); margin-bottom: 0.2rem; }
   .timeline-inst { font-size: 0.82rem; color: rgba(228,180,165,0.55); }
-
   .contato { background: var(--nude-light); padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
   .contato-image { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 4px; }
   .contato-image .foto-grande { grid-column: 1 / 3; overflow: hidden; }
-  .contato-image .foto-grande img { width: 100%; height: 320px; object-fit: cover; object-position: center top; display: block; }
+  .contato-image .foto-grande img { width: 100%; height: 320px; object-fit: cover; object-position: center center; display: block; }
   .contato-image .foto-pequena { overflow: hidden; }
-  .contato-image .foto-pequena img { width: 100%; height: 160px; object-fit: cover; object-position: center top; display: block; transition: transform 0.4s; }
+  .contato-image .foto-pequena img { width: 100%; height: 160px; object-fit: cover; object-position: center center; display: block; transition: transform 0.4s; }
   .contato-image .foto-pequena:hover img { transform: scale(1.05); }
   .contato-desc { color: var(--text-mid); font-size: 0.96rem; line-height: 1.85; margin-bottom: 2.5rem; }
   .contato-items { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.2rem; }
-  .contato-item {
-    display: flex; align-items: flex-start; gap: 1rem;
-    padding: 1.1rem 1.3rem; background: var(--warm-white);
-    border-left: 2px solid var(--bordo); text-decoration: none; color: inherit;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
+  .contato-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 1.3rem; background: var(--warm-white); border-left: 2px solid var(--bordo); text-decoration: none; color: inherit; transition: box-shadow 0.2s, transform 0.2s; }
   .contato-item:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(111,42,56,0.1); }
   .contato-item-icon { width: 36px; height: 36px; min-width: 36px; border-radius: 50%; background: var(--nude-light); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
   .contato-item h4 { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dourado); margin-bottom: 0.2rem; font-weight: 500; }
@@ -187,14 +104,11 @@
   .endereco-box { padding: 1.2rem 1.4rem; background: var(--warm-white); border-left: 2px solid var(--dourado); }
   .endereco-box h4 { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dourado); margin-bottom: 0.4rem; font-weight: 500; }
   .endereco-box p { font-size: 0.87rem; color: var(--text-mid); line-height: 1.65; }
-
   footer { background: var(--bordo-dark); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   footer img { height: 40px; width: auto; }
   footer p { font-size: 0.75rem; color: rgba(228,180,165,0.5); letter-spacing: 0.05em; }
-
   .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .fade-in.visible { opacity: 1; transform: none; }
-
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; flex-direction: column; gap: 1.2rem; position: absolute; top: 70px; left: 0; right: 0; background: var(--off-white); padding: 2rem; border-bottom: 1px solid var(--nude-light); }
@@ -222,10 +136,9 @@
 </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-logo">
-    <img src="LOGO-Photoroom.png" alt="Dra. Roberta Barros – Nutrologia Clínica">
+    <img src="LOGO.jpg" alt="Dra. Roberta Barros – Nutrologia Clínica">
   </div>
   <ul class="nav-links" id="navLinks">
     <li><a href="#sobre">Sobre</a></li>
@@ -242,9 +155,7 @@
   <div class="hero-text">
     <p class="hero-eyebrow">Nutrologia Clínica · Campinas, SP</p>
     <h1>Medicina que<br>cuida de você<br><em>por inteiro</em></h1>
-    <p class="hero-desc">
-      Saúde da mulher, metabolismo, menopausa e longevidade — com olhar clínico aprofundado, base científica e cuidado genuíno com cada paciente.
-    </p>
+    <p class="hero-desc">Saúde da mulher, metabolismo, menopausa e longevidade — com olhar clínico aprofundado, base científica e cuidado genuíno com cada paciente.</p>
     <div>
       <a href="#contato" class="btn-primary">Agendar Consulta</a>
       <a href="#sobre" class="btn-outline">Conheça meu trabalho</a>
@@ -273,32 +184,14 @@
   <div class="sobre-text fade-in">
     <p class="section-label">Sobre mim</p>
     <h2 class="section-title">Uma escolha que<br><em>começou em mim</em></h2>
-    <p>
-      Há mais de doze anos, tomei uma decisão que mudou tudo: cuidar de mim mesma de verdade. Mudei meus hábitos, transformei meu estilo de vida, entendi na prática o que significa prevenir antes de precisar tratar. Essa virada foi pessoal — e foi ela que moldou a médica que sou hoje.
-    </p>
-    <p>
-      O que começou como autocuidado foi crescendo, se aprofundando, e naturalmente se expandiu para a minha prática clínica. Hoje, é exatamente isso que me move: acompanhar pessoas nessa mesma transformação — incentivando o movimento, a prevenção, os exames de rotina, os hábitos que sustentam uma vida com mais energia e qualidade.
-    </p>
-    <p>
-      Foi nesse caminho que me apaixonei pela nutrologia — e, dentro dela, pela <strong>saúde da mulher a partir dos 40 anos</strong>. O climatério, a menopausa, as mudanças hormonais que transformam o corpo e a vida: essa é uma fase que exige atenção especializada, cuidado antes do problema aparecer, e um olhar clínico atento e atualizado. É aqui que encontro meu maior propósito.
-    </p>
+    <p>Há mais de doze anos, tomei uma decisão que mudou tudo: cuidar de mim mesma de verdade. Mudei meus hábitos, transformei meu estilo de vida, entendi na prática o que significa prevenir antes de precisar tratar. Essa virada foi pessoal — e foi ela que moldou a médica que sou hoje.</p>
+    <p>O que começou como autocuidado foi crescendo, se aprofundando, e naturalmente se expandiu para a minha prática clínica. Hoje, é exatamente isso que me move: acompanhar pessoas nessa mesma transformação — incentivando o movimento, a prevenção, os exames de rotina, os hábitos que sustentam uma vida com mais energia e qualidade.</p>
+    <p>Foi nesse caminho que me apaixonei pela nutrologia — e, dentro dela, pela <strong>saúde da mulher a partir dos 40 anos</strong>. O climatério, a menopausa, as mudanças hormonais que transformam o corpo e a vida: essa é uma fase que exige atenção especializada, cuidado antes do problema aparecer, e um olhar clínico atento e atualizado. É aqui que encontro meu maior propósito.</p>
     <div class="sobre-destaques">
-      <div class="destaque-item">
-        <h4>Especialidade</h4>
-        <p>Nutrologia Clínica</p>
-      </div>
-      <div class="destaque-item">
-        <h4>Foco principal</h4>
-        <p>Saúde da mulher 40+</p>
-      </div>
-      <div class="destaque-item">
-        <h4>Atendimento</h4>
-        <p>Instituto Wilson Mello · Campinas</p>
-      </div>
-      <div class="destaque-item">
-        <h4>Registro</h4>
-        <p>CRM-SP 1306062</p>
-      </div>
+      <div class="destaque-item"><h4>Especialidade</h4><p>Nutrologia Clínica</p></div>
+      <div class="destaque-item"><h4>Foco principal</h4><p>Saúde da mulher 40+</p></div>
+      <div class="destaque-item"><h4>Atendimento</h4><p>Instituto Wilson Mello · Campinas</p></div>
+      <div class="destaque-item"><h4>Registro</h4><p>CRM-SP 1306062</p></div>
     </div>
   </div>
 </section>
@@ -311,36 +204,12 @@
     <h2 class="section-title">Áreas de <em>atuação</em></h2>
   </div>
   <div class="areas-grid">
-    <div class="area-card fade-in">
-      <p class="area-num">01</p>
-      <h3>Saúde da Mulher 40+</h3>
-      <p>Cuidado especializado para a mulher na perimenopausa e menopausa — hormônios, sintomas, energia e bem-estar com abordagem médica completa.</p>
-    </div>
-    <div class="area-card fade-in">
-      <p class="area-num">02</p>
-      <h3>Reposição Hormonal</h3>
-      <p>Avaliação e condução da terapia hormonal com segurança e base científica atualizada, individualizada para cada mulher e cada momento de vida.</p>
-    </div>
-    <div class="area-card fade-in">
-      <p class="area-num">03</p>
-      <h3>Emagrecimento Sustentável</h3>
-      <p>Tratamento médico do excesso de peso com investigação metabólica, suplementação e estratégias reais de mudança de hábito — sem atalhos.</p>
-    </div>
-    <div class="area-card fade-in">
-      <p class="area-num">04</p>
-      <h3>Nutrologia Clínica</h3>
-      <p>Avaliação nutricional completa, identificação de deficiências e prescrição de suplementação baseada em exames e evidências científicas.</p>
-    </div>
-    <div class="area-card fade-in">
-      <p class="area-num">05</p>
-      <h3>Medicina Preventiva</h3>
-      <p>Olhar integrativo para antecipar riscos, preservar a saúde metabólica e garantir longevidade — com qualidade de vida real.</p>
-    </div>
-    <div class="area-card fade-in">
-      <p class="area-num">06</p>
-      <h3>Hábitos e Longevidade</h3>
-      <p>Estratégias práticas e sustentáveis para melhorar energia, sono, composição corporal e saúde a longo prazo.</p>
-    </div>
+    <div class="area-card fade-in"><p class="area-num">01</p><h3>Saúde da Mulher 40+</h3><p>Cuidado especializado para a mulher na perimenopausa e menopausa — hormônios, sintomas, energia e bem-estar com abordagem médica completa.</p></div>
+    <div class="area-card fade-in"><p class="area-num">02</p><h3>Reposição Hormonal</h3><p>Avaliação e condução da terapia hormonal com segurança e base científica atualizada, individualizada para cada mulher e cada momento de vida.</p></div>
+    <div class="area-card fade-in"><p class="area-num">03</p><h3>Emagrecimento Sustentável</h3><p>Tratamento médico do excesso de peso com investigação metabólica, suplementação e estratégias reais de mudança de hábito — sem atalhos.</p></div>
+    <div class="area-card fade-in"><p class="area-num">04</p><h3>Nutrologia Clínica</h3><p>Avaliação nutricional completa, identificação de deficiências e prescrição de suplementação baseada em exames e evidências científicas.</p></div>
+    <div class="area-card fade-in"><p class="area-num">05</p><h3>Medicina Preventiva</h3><p>Olhar integrativo para antecipar riscos, preservar a saúde metabólica e garantir longevidade — com qualidade de vida real.</p></div>
+    <div class="area-card fade-in"><p class="area-num">06</p><h3>Hábitos e Longevidade</h3><p>Estratégias práticas e sustentáveis para melhorar energia, sono, composição corporal e saúde a longo prazo.</p></div>
   </div>
 </section>
 
@@ -358,45 +227,17 @@
     <div class="fade-in">
       <p class="section-label">Trajetória</p>
       <h2 class="section-title">Formação e <em>experiência</em></h2>
-      <p class="formacao-desc">
-        Mais de 15 anos de trajetória clínica — da medicina de urgência à pesquisa clínica em nutrologia, passando pela medicina preventiva e de Checkup. Uma base sólida a serviço de um olhar integrativo e atualizado.
-      </p>
-      <p class="formacao-desc">
-        Hoje atendo no Instituto Wilson Mello, centro de excelência em Campinas, integrada a uma equipe multidisciplinar comprometida com o cuidado real de cada paciente.
-      </p>
+      <p class="formacao-desc">Mais de 15 anos de trajetória clínica — da medicina de urgência à pesquisa clínica em nutrologia, passando pela medicina preventiva e de Checkup. Uma base sólida a serviço de um olhar integrativo e atualizado.</p>
+      <p class="formacao-desc">Hoje atendo no Instituto Wilson Mello, centro de excelência em Campinas, integrada a uma equipe multidisciplinar comprometida com o cuidado real de cada paciente.</p>
     </div>
     <div class="fade-in">
       <ul class="timeline">
-        <li>
-          <p class="timeline-year">Graduação · 2009</p>
-          <p class="timeline-title">Medicina</p>
-          <p class="timeline-inst">Universidade José do Rosário Vellano – UNIFENAS, Alfenas-MG</p>
-        </li>
-        <li>
-          <p class="timeline-year">Especialização · 2009–2011</p>
-          <p class="timeline-title">Clínica Médica</p>
-          <p class="timeline-inst">Hospital Fundação Centro Médico de Campinas</p>
-        </li>
-        <li>
-          <p class="timeline-year">Atuação · 2009–2014</p>
-          <p class="timeline-title">Urgência, Clínica Médica e Pesquisa Clínica em Nutrologia</p>
-          <p class="timeline-inst">Campinas, SP</p>
-        </li>
-        <li>
-          <p class="timeline-year">Atuação · desde 2014</p>
-          <p class="timeline-title">Medicina Preventiva e Checkup</p>
-          <p class="timeline-inst">Checkup Campinas — visão integrativa e preventiva</p>
-        </li>
-        <li>
-          <p class="timeline-year">Especialização · 2018</p>
-          <p class="timeline-title">Nutrologia</p>
-          <p class="timeline-inst">Associação Brasileira de Nutrologia – ABRAN</p>
-        </li>
-        <li>
-          <p class="timeline-year">Atualmente</p>
-          <p class="timeline-title">Instituto Wilson Mello</p>
-          <p class="timeline-inst">Centro de excelência multidisciplinar · Campinas, SP</p>
-        </li>
+        <li><p class="timeline-year">Graduação · 2009</p><p class="timeline-title">Medicina</p><p class="timeline-inst">Universidade José do Rosário Vellano – UNIFENAS, Alfenas-MG</p></li>
+        <li><p class="timeline-year">Especialização · 2009–2011</p><p class="timeline-title">Clínica Médica</p><p class="timeline-inst">Hospital Fundação Centro Médico de Campinas</p></li>
+        <li><p class="timeline-year">Atuação · 2009–2014</p><p class="timeline-title">Urgência, Clínica Médica e Pesquisa Clínica em Nutrologia</p><p class="timeline-inst">Campinas, SP</p></li>
+        <li><p class="timeline-year">Atuação · desde 2014</p><p class="timeline-title">Medicina Preventiva e Checkup</p><p class="timeline-inst">Checkup Campinas — visão integrativa e preventiva</p></li>
+        <li><p class="timeline-year">Especialização · 2018</p><p class="timeline-title">Nutrologia</p><p class="timeline-inst">Associação Brasileira de Nutrologia – ABRAN</p></li>
+        <li><p class="timeline-year">Atualmente</p><p class="timeline-title">Instituto Wilson Mello</p><p class="timeline-inst">Centro de excelência multidisciplinar · Campinas, SP</p></li>
       </ul>
     </div>
   </div>
@@ -406,59 +247,37 @@
 
 <section class="contato" id="contato">
   <div class="contato-image fade-in">
-    <div class="foto-grande">
-      <img src="IMG_6795.jpeg" alt="Dra. Roberta Barros">
-    </div>
-    <div class="foto-pequena">
-      <img src="IMG_6545.jpeg" alt="Dra. Roberta Barros">
-    </div>
-    <div class="foto-pequena">
-      <img src="IMG_6824.jpeg" alt="Dra. Roberta Barros">
-    </div>
+    <div class="foto-grande"><img src="IMG_6795.jpeg" alt="Dra. Roberta Barros"></div>
+    <div class="foto-pequena"><img src="IMG_6545.jpeg" alt="Dra. Roberta Barros"></div>
+    <div class="foto-pequena"><img src="IMG_6824.jpeg" alt="Dra. Roberta Barros"></div>
   </div>
   <div class="contato-text fade-in">
     <p class="section-label">Vamos conversar</p>
     <h2 class="section-title">Agende sua <em>consulta</em></h2>
-    <p class="contato-desc">
-      Estou aqui para te ouvir com atenção e construir juntos um caminho de saúde que faça sentido para a sua vida e para o seu momento.
-    </p>
+    <p class="contato-desc">Estou aqui para te ouvir com atenção e construir juntos um caminho de saúde que faça sentido para a sua vida e para o seu momento.</p>
     <div class="contato-items">
       <a href="https://wa.me/5519993296253" class="contato-item" target="_blank">
         <div class="contato-item-icon">📱</div>
-        <div>
-          <h4>WhatsApp</h4>
-          <p>(19) 99329-6253</p>
-        </div>
+        <div><h4>WhatsApp</h4><p>(19) 99329-6253</p></div>
       </a>
       <a href="mailto:atendimentodraroberta@gmail.com" class="contato-item">
         <div class="contato-item-icon">✉️</div>
-        <div>
-          <h4>E-mail</h4>
-          <p>atendimentodraroberta@gmail.com</p>
-        </div>
+        <div><h4>E-mail</h4><p>atendimentodraroberta@gmail.com</p></div>
       </a>
       <a href="https://instagram.com/dra_robertabarros" class="contato-item" target="_blank">
         <div class="contato-item-icon">📷</div>
-        <div>
-          <h4>Instagram</h4>
-          <p>@dra_robertabarros</p>
-        </div>
+        <div><h4>Instagram</h4><p>@dra_robertabarros</p></div>
       </a>
     </div>
     <div class="endereco-box">
       <h4>📍 Consultório</h4>
-      <p>
-        Instituto Wilson Mello<br>
-        Praça Capital · Edifício Chicago, 1º andar<br>
-        Rua José Rocha Bonfim, 214 — Jardim Santa Genebra<br>
-        CEP 13080-650 · Campinas, SP
-      </p>
+      <p>Instituto Wilson Mello<br>Praça Capital · Edifício Chicago, 1º andar<br>Rua José Rocha Bonfim, 214 — Jardim Santa Genebra<br>CEP 13080-650 · Campinas, SP</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <img src="LOGO-Photoroom.png" alt="Dra. Roberta Barros">
+  <img src="LOGO.jpg" alt="Dra. Roberta Barros">
   <p>CRM-SP 1306062 · Nutrologia Clínica · Campinas, SP</p>
   <p>© 2025 Dra. Roberta Barros</p>
 </footer>
@@ -468,11 +287,10 @@
   const navLinks = document.getElementById('navLinks');
   hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
-</html>
+</html></html>
